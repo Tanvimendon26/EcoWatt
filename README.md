@@ -181,21 +181,6 @@ Create your own consumer account using the registration page to explore the cons
 
 ---
 
-## 📸 Screenshots
-
-Add screenshots of the following pages:
-
-* Login Page
-* Consumer Dashboard
-* Appliance Management
-* Usage Tracking
-* Energy Analytics
-* Bill History
-* Invoice
-* Administrator Dashboard
-* Revenue Analytics
-
----
 
 ## 🚀 Future Enhancements
 
