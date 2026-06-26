@@ -1,205 +1,97 @@
-# ⚡ EcoWatt – Smart Electricity Management & Billing System
+# EcoWatt
 
-EcoWatt is a full-stack Smart Electricity Management & Billing System that enables consumers to monitor electricity consumption, manage appliances, track energy usage, generate monthly bills, and download professional invoices. The platform also includes a dedicated administrator portal for managing consumers, generating bills, verifying payments, and analyzing revenue.
+EcoWatt is a smart electricity management and energy analytics platform built with React, Vite, Express, and SQLite. It provides both consumer and admin experiences for tracking usage, managing appliances, viewing analytics, and generating invoices.
 
-Designed as a modern utility management solution, EcoWatt demonstrates full-stack web development, role-based authentication, database management, and interactive data visualization.
+## Key Features
 
----
+- User registration and login
+- Consumer dashboard with appliance management
+- Usage tracking and energy analytics
+- Billing preview and invoice generation
+- Admin portal for consumer management and reporting
+- Printable invoices and PDF export support
 
-## 🎯 Problem Statement
+## Tech Stack
 
-Households often lack detailed insights into their electricity consumption, making it difficult to identify high-energy appliances and manage electricity costs effectively. EcoWatt addresses this challenge by providing appliance-wise energy monitoring, estimated billing, interactive analytics, and a centralized administration system for managing consumers and electricity billing.
+- React 19 + TypeScript
+- Vite for frontend development
+- Express server with TypeScript
+- SQLite database
+- Tailwind CSS for styling
+- Recharts for charts and dashboards
+- jsPDF / html2canvas for print export
 
----
+## Prerequisites
 
-## ✨ Features
+- Node.js 18+ / 20+
+- npm
 
-### 👤 Consumer Portal
+## Setup
 
-* Secure User Registration & Login
-* Role-Based Authentication
-* Appliance Management (Add, Edit & Delete)
-* Daily & Monthly Energy Usage Tracking
-* Monthly Electricity Bill Estimation
-* Interactive Energy Analytics Dashboard
-* Bill History
-* Downloadable PDF Invoices
-* Consumer Profile Management
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
----
+2. Optionally create a `.env` file in the project root to configure a JWT secret:
+   ```env
+   JWT_SECRET=your-secret-key
+   NODE_ENV=development
+   ```
 
-### 🛠 Administrator Portal
+   If `JWT_SECRET` is not provided, the server generates a random secret at runtime.
 
-* Separate Administrator Login
-* Consumer Management
-* Bill Generation & Management
-* Payment Authorization
-* Revenue Analytics Dashboard
-* Billing Reports
-* Consumer Billing History
-* Administrative Activity Dashboard
-* System Monitoring
+## Running Locally
 
----
-
-## ⭐ Key Highlights
-
-* Full-Stack Web Application
-* Role-Based Authentication
-* SQLite Database Integration
-* RESTful API using Express.js
-* Responsive User Interface
-* Interactive Charts & Dashboards
-* Dynamic Bill Generation
-* PDF Invoice Export
-* Energy Consumption Analytics
-
----
-
-## 🛠 Tech Stack
-
-### Frontend
-
-* React 19
-* TypeScript
-* Vite
-* Tailwind CSS
-* Recharts
-
-### Backend
-
-* Node.js
-* Express.js
-
-### Database
-
-* SQLite
-
-### Libraries
-
-* jsPDF
-* html2canvas
-* React-To-Print
-* HTML-to-Image
-
----
-
-## 📂 Project Structure
-
-```text
-EcoWatt
-│
-├── data/
-│   └── ecowatt.db
-├── server/
-├── src/
-│   ├── components/
-│   ├── contexts/
-│   ├── hooks/
-│   ├── utils/
-│   └── ...
-├── .gitignore
-├── index.html
-├── package.json
-├── package-lock.json
-├── README.md
-├── server.ts
-├── tsconfig.json
-└── vite.config.ts
-```
-
----
-
-## 🚀 Installation
-
-Clone the repository
-
-```bash
-git clone https://github.com/Tanvimendon26/EcoWatt.git
-```
-
-Navigate to the project
-
-```bash
-cd EcoWatt
-```
-
-Install dependencies
-
-```bash
-npm install
-```
-
-Run the application
+Start the development environment:
 
 ```bash
 npm run dev
 ```
 
-Open your browser:
+Open the app in your browser at:
 
-```
-http://localhost:3000
-```
+- `http://localhost:5173`
 
-(or the URL shown in the terminal after running the application.)
+## Build and Preview
 
----
+Build the production frontend and server bundle:
 
-## 🔐 Demo Credentials
-
-### Administrator
-
-**Email**
-
-```
-admin@ecowatt.com
+```bash
+npm run build
 ```
 
-**Password**
+Preview the production build:
 
+```bash
+npm run preview
 ```
-admin123
-```
 
-Create your own consumer account using the registration page to explore the consumer portal.
+## Project Structure
 
----
+- `src/` - React application source code
+- `server.ts` - Express backend entry point
+- `server/db.ts` - Database models and helper functions
+- `assets/` - static assets used by the app
+- `data/` - application data and seeded content
+- `tsconfig.json` - TypeScript configuration
+- `vite.config.ts` - Vite configuration
 
-## 📈 Key Modules
+## API Overview
 
-* Authentication
-* Consumer Dashboard
-* Appliance Management
-* Usage Tracking
-* Energy Analytics
-* Bill Management
-* Invoice Generation
-* Revenue Analytics
-* Administrator Dashboard
-* Payment Verification
+The backend exposes authenticated routes under `/api`:
 
----
+- `POST /api/auth/register` - register a new user
+- `POST /api/auth/login` - login and receive a session token
+- `GET /api/consumer/...` - consumer-specific data endpoints
+- `GET /api/admin/...` - admin-only management endpoints
 
+## Notes
 
-## 🚀 Future Enhancements
+- Authentication uses secure session tokens in headers or cookies.
+- User roles include `user` and `admin` with separate dashboards.
+- The frontend sends `Authorization: Bearer <token>` on protected API calls.
 
-* Multi-Consumer Management
-* Online Payment Gateway Integration
-* Smart Meter / IoT Integration
-* Email & SMS Bill Notifications
-* AI-Based Energy Consumption Forecasting
-* Mobile Application
-* Cloud Database (PostgreSQL/MySQL)
-* Utility Provider Integration
+## License
 
----
-
-## 👩‍💻 Author
-
-**Tanvi Mendon**
----
-
-## 📄 License
-
-This project is developed for educational, learning, and portfolio purposes.
+This project is available under the MIT License.
